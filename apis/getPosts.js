@@ -1,6 +1,10 @@
 const getPosts = () => {
     return fetch('https://jsonplaceholder.typicode.com/posts')
-        .then((res) => res.json())
+        .then((res) => {
+            if (res.ok) {
+                return res.json();
+            }
+        })
         .catch((err) => console.error(err));
 };
 
