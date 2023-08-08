@@ -8,6 +8,7 @@ const loadHandler = () => {
             if (!Array.isArray(posts)) {
                 throw new Error('Expected posts to be an array');
             }
+
             posts.forEach((postData) => {
                 const postDom = createPost(postData);
                 dom.root.append(postDom);
